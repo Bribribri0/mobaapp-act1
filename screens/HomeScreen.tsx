@@ -31,10 +31,8 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ toggleTheme, isDarkMode }) => {
 
   const toggleTab = (tab: "skills" | "projects") => {
     if (selectedTab === tab) {
-      // If the selected tab is already open, close it
       Animated.timing(animation, { toValue: 0, duration: 300, useNativeDriver: false }).start(() => setSelectedTab(null));
     } else {
-      // Open the selected tab
       setSelectedTab(tab);
       Animated.timing(animation, { toValue: 1, duration: 300, useNativeDriver: false }).start();
     }
@@ -122,7 +120,6 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ toggleTheme, isDarkMode }) => {
   );
 };
 
-// Styles (same styles, just removed unnecessary ones)
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 20 },
   profile: { alignItems: "center", marginBottom: 20 },
